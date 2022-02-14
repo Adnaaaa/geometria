@@ -7,12 +7,9 @@ public class Circulo_ABG extends FiguraGeometrica_ABG {
 	public Circulo_ABG(double r, String tipoFigura) {
 		super(tipoFigura);
 		radio = r;
-		if (radio<0) {
-			r=-r;
-			}
+		
 		}
 	
-
 	@Override
 	public double area() {
 		return radio * radio * PI;
@@ -21,6 +18,8 @@ public class Circulo_ABG extends FiguraGeometrica_ABG {
 	
 	@Override
 	public double perimetro() {
+		if (radio<0) 
+			radio=radio*(-1);
 		return radio * 2 * PI;
 	}
 
